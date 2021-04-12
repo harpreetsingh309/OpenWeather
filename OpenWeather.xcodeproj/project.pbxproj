@@ -12,6 +12,11 @@
 		F315465C2625061C00F4A66A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F315465A2625061C00F4A66A /* Main.storyboard */; };
 		F315465E2625061D00F4A66A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F315465D2625061D00F4A66A /* Assets.xcassets */; };
 		F31546612625061D00F4A66A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F315465F2625061D00F4A66A /* LaunchScreen.storyboard */; };
+		F315466E2625098C00F4A66A /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F315466D2625098C00F4A66A /* Alert.swift */; };
+		F3154672262509B700F4A66A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3154671262509B700F4A66A /* UIViewController.swift */; };
+		F3154675262509E400F4A66A /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3154674262509E400F4A66A /* UIStoryboard.swift */; };
+		F315467826250A0300F4A66A /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F315467726250A0300F4A66A /* UIApplication.swift */; };
+		F315467C26250A2300F4A66A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F315467B26250A2300F4A66A /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		F315465D2625061D00F4A66A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F31546602625061D00F4A66A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F31546622625061D00F4A66A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F315466D2625098C00F4A66A /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		F3154671262509B700F4A66A /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		F3154674262509E400F4A66A /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
+		F315467726250A0300F4A66A /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		F315467B26250A2300F4A66A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +66,33 @@
 			children = (
 				F31546542625061C00F4A66A /* AppDelegate.swift */,
 				F31546562625061C00F4A66A /* SceneDelegate.swift */,
-				F315465A2625061C00F4A66A /* Main.storyboard */,
+				F315466C2625095900F4A66A /* Utils */,
+				F315466A2625089B00F4A66A /* Storyboards */,
 				F315465D2625061D00F4A66A /* Assets.xcassets */,
-				F315465F2625061D00F4A66A /* LaunchScreen.storyboard */,
 				F31546622625061D00F4A66A /* Info.plist */,
 			);
 			path = OpenWeather;
+			sourceTree = "<group>";
+		};
+		F315466A2625089B00F4A66A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F315465A2625061C00F4A66A /* Main.storyboard */,
+				F315465F2625061D00F4A66A /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		F315466C2625095900F4A66A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F315466D2625098C00F4A66A /* Alert.swift */,
+				F3154671262509B700F4A66A /* UIViewController.swift */,
+				F3154674262509E400F4A66A /* UIStoryboard.swift */,
+				F315467726250A0300F4A66A /* UIApplication.swift */,
+				F315467B26250A2300F4A66A /* Constants.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,7 +165,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F315467826250A0300F4A66A /* UIApplication.swift in Sources */,
+				F315466E2625098C00F4A66A /* Alert.swift in Sources */,
+				F3154675262509E400F4A66A /* UIStoryboard.swift in Sources */,
 				F31546552625061C00F4A66A /* AppDelegate.swift in Sources */,
+				F315467C26250A2300F4A66A /* Constants.swift in Sources */,
+				F3154672262509B700F4A66A /* UIViewController.swift in Sources */,
 				F31546572625061C00F4A66A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
