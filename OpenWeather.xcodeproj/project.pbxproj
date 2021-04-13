@@ -23,6 +23,7 @@
 		F315468F2625176F00F4A66A /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F315468D2625176F00F4A66A /* WeatherTableViewCell.swift */; };
 		F31546902625176F00F4A66A /* WeatherTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F315468E2625176F00F4A66A /* WeatherTableViewCell.xib */; };
 		F31546952625182300F4A66A /* WeatherManagerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F31546942625182300F4A66A /* WeatherManagerModel.swift */; };
+		F3154698262519FE00F4A66A /* WeatherListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3154697262519FE00F4A66A /* WeatherListDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		F315468D2625176F00F4A66A /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 		F315468E2625176F00F4A66A /* WeatherTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherTableViewCell.xib; sourceTree = "<group>"; };
 		F31546942625182300F4A66A /* WeatherManagerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManagerModel.swift; sourceTree = "<group>"; };
+		F3154697262519FE00F4A66A /* WeatherListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				F31546942625182300F4A66A /* WeatherManagerModel.swift */,
+				F3154697262519FE00F4A66A /* WeatherListDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				F315467826250A0300F4A66A /* UIApplication.swift in Sources */,
 				F315466E2625098C00F4A66A /* Alert.swift in Sources */,
 				F315468F2625176F00F4A66A /* WeatherTableViewCell.swift in Sources */,
+				F3154698262519FE00F4A66A /* WeatherListDataModel.swift in Sources */,
 				F3154675262509E400F4A66A /* UIStoryboard.swift in Sources */,
 				F31546552625061C00F4A66A /* AppDelegate.swift in Sources */,
 				F3154680262515C600F4A66A /* WeatherLocationListVC.swift in Sources */,
