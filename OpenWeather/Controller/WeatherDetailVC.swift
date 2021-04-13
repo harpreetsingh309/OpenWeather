@@ -17,7 +17,7 @@ class WeatherDetailVC: UIViewController {
     @IBOutlet weak var minLabel: UILabel!
     @IBOutlet weak var maxLabel: UILabel!
 
-    var weather: WeatherViewModel!
+    var weather: WeatherViewModel?
     
     //MARK:- LifeCycle
     override func viewDidLoad() {
@@ -26,13 +26,14 @@ class WeatherDetailVC: UIViewController {
     }
     
     private func setUI() {
-        headerLabel.text = "Weather for " + weather.cityName
-        temperatureLabel.text = weather.temperatureString
-        humidityLabel.text = weather.humidityString
-        minLabel.text = weather.tempMinString
-        maxLabel.text = weather.tempMaxString
-        conditionImageView.image = UIImage(systemName: weather.conditionName)
-        cityLabel.text = weather.cityName
+        guard let model = weather else { return }
+        headerLabel.text = "Weather for " + model.cityName
+        temperatureLabel.text = model.temperatureString
+        humidityLabel.text = model.humidityString
+        minLabel.text = model.tempMinString
+        maxLabel.text = model.tempMaxString
+        conditionImageView.image = UIImage(systemName: model.conditionName)
+        cityLabel.text = model.cityName
     }
     
     @IBAction func actionDismiss(_ sender: UIButton) {

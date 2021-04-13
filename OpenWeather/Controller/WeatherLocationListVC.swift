@@ -24,20 +24,12 @@ class WeatherLocationListVC: UIViewController {
     private func setupUI() {
         let nib = UINib(nibName: cellID, bundle: nil)
         weatherTableView.register(nib, forCellReuseIdentifier: cellID)
-        loadTableData()
         loadLocationData()
-    }
-    
-    // MARK:- Table View Observer
-    private func loadTableData() {
-        DispatchQueue.main.asyncAfter(deadline: .now()+1, execute: {
-            // to add array here
-        })
     }
     
     // MARK:- Fetch Given cities weather condition
     private func loadLocationData() {
-        weatherManager.fetchBulkWeather()
+        weatherManager.fetchBulkWeather(cityId: "\(Cities.melbourne.rawValue),\(Cities.sydney.rawValue),\(Cities.brisbane.rawValue)")
     }
     
     @IBAction func actionAddNewLocation(_ sender: UIButton) {
@@ -61,6 +53,12 @@ class WeatherLocationListVC: UIViewController {
             Alert.showAlert(message: msg)
         }
     }
+    
+    private func updateView() {
+        DispatchQueue.main.async {
+            self.weatherTableView.reloadData()
+        }
+    }
 }
 
 //MARK: - WeatherManagerDelegate
@@ -68,13 +66,13 @@ class WeatherLocationListVC: UIViewController {
 extension WeatherLocationListVC: WeatherManagerDelegate {
     
     func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherViewModel) {
-//        arrayLocations.insert(weather, at: arrayLocations.value.count)
+        arrayLocations.append(weather)
+        updateView()
     }
     
     func didUpdateBulkWeather(_ weatherManager: WeatherManager, weather: [WeatherViewModel]) {
-        for (ind, bulkWeather) in weather.enumerated() {
-            arrayLocations.insert(bulkWeather, at: ind)
-        }
+        arrayLocations = weather
+        updateView()
     }
     
     func didFailWithError(error: String) {
@@ -84,18 +82,29 @@ extension WeatherLocationListVC: WeatherManagerDelegate {
 
 //MARK:- Tableview delegate and datasource methods
 
-extension WeatherLocationListVC: UITableViewDelegate {
+extension WeatherLocationListVC: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arrayLocations.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! WeatherTableViewCell
+        cell.updateCell(with: arrayLocations[indexPath.row])
+        return cell
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let passvc = StoryBoardMain.detailVC.instantiate()
-//        passvc.weather = arrayLocations.value[indexPath.row]
+        passvc.weather = arrayLocations[indexPath.row]
         self.present(passvc, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         if indexPath.row == 0 { return nil }
-        let deleteAction = UIContextualAction(style: .destructive, title: Constants.strDelete) { (action, view, handler) in
-            self.arrayLocations.remove(at: indexPath.row)
+        let deleteAction = UIContextualAction(style: .destructive, title: Constants.strDelete) {[weak self] (action, view, handler) in
+            self?.arrayLocations.remove(at: indexPath.row)
+            self?.updateView()
         }
         deleteAction.backgroundColor = .red
         let configuration = UISwipeActionsConfiguration(actions: [deleteAction])

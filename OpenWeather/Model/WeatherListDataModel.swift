@@ -7,6 +7,12 @@
 
 import Foundation
 
+enum Cities: String {
+    case melbourne = "4163971"
+    case sydney = "2147714"
+    case brisbane = "2174003"
+}
+
 struct WeatherListDataModel: Codable {
     let list: [WeatherDataModel]
 }

@@ -35,14 +35,14 @@ class WeatherManager {
     // MARK:- Get weather data from cityName
     func fetchWeather(cityName: String) {
             showActivityIndicator()
-            let urlString = "\(Constants.weatherBaseURL)&q=\(cityName)&appid=\(getAPIKey)"
+            let urlString = "\(Constants.weatherBaseURL)weather?units=metric&q=\(cityName)&appid=\(getAPIKey)"
             performRequest(with: urlString)
     }
     
     // MARK:- Get weather data as city id's added in URL
-    func fetchBulkWeather() {
+    func fetchBulkWeather(cityId: String) {
         showActivityIndicator()
-        let urlString = "\(Constants.cityWeatherBaseURL)&appid=\(getAPIKey)"
+        let urlString = "\(Constants.weatherBaseURL)group?units=metric&id=\(cityId)&appid=\(getAPIKey)"
         performRequest(with: urlString, isBulk: true)
     }
     

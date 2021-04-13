@@ -48,12 +48,22 @@
                                 <color key="textColor" name="tempColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0vc-qt-nUy">
+                                <rect key="frame" x="217" y="12.5" width="25" height="25"/>
+                                <color key="tintColor" name="tempColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Ksm-Gt-8xg"/>
+                                    <constraint firstAttribute="width" constant="25" id="jJJ-NZ-cNj"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Nn6-Bs-al7" firstAttribute="leading" secondItem="QPm-OI-Aj1" secondAttribute="leading" constant="14" id="2SM-BW-p2V"/>
                             <constraint firstAttribute="bottom" secondItem="9Pr-wp-jbd" secondAttribute="bottom" id="Ht9-5w-DRz"/>
                             <constraint firstItem="Ga4-f0-EfR" firstAttribute="top" secondItem="Nn6-Bs-al7" secondAttribute="bottom" id="KD1-Jl-wun"/>
+                            <constraint firstItem="0vc-qt-nUy" firstAttribute="centerY" secondItem="9Pr-wp-jbd" secondAttribute="centerY" id="KwN-PD-mZJ"/>
+                            <constraint firstItem="9Pr-wp-jbd" firstAttribute="leading" secondItem="0vc-qt-nUy" secondAttribute="trailing" constant="10.5" id="TbG-Ch-jJ6"/>
                             <constraint firstAttribute="bottom" secondItem="Ga4-f0-EfR" secondAttribute="bottom" constant="6" id="WCV-7k-g5H"/>
                             <constraint firstItem="9Pr-wp-jbd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ga4-f0-EfR" secondAttribute="trailing" constant="5" id="gi8-CK-yyB"/>
                             <constraint firstItem="9Pr-wp-jbd" firstAttribute="top" secondItem="QPm-OI-Aj1" secondAttribute="top" id="iov-Vf-NXb"/>
@@ -77,9 +87,10 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="lblCity" destination="Nn6-Bs-al7" id="I69-N6-UVs"/>
-                <outlet property="lblDescription" destination="Ga4-f0-EfR" id="i3k-Wf-Fuq"/>
-                <outlet property="lblTemp" destination="9Pr-wp-jbd" id="hP3-hb-2uD"/>
+                <outlet property="cityLabel" destination="Nn6-Bs-al7" id="DJv-8S-P1O"/>
+                <outlet property="conditionImageView" destination="0vc-qt-nUy" id="7Md-sH-lVu"/>
+                <outlet property="descriptionLabel" destination="Ga4-f0-EfR" id="g33-Jd-kKA"/>
+                <outlet property="temperatureLabel" destination="9Pr-wp-jbd" id="ijw-XW-6kr"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="103.125"/>
         </tableViewCell>

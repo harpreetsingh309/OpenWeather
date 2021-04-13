@@ -9,16 +9,18 @@ import UIKit
 
 class WeatherTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var lblCity: UILabel!
-    @IBOutlet weak var lblDescription: UILabel!
-    @IBOutlet weak var lblTemp: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var conditionImageView: UIImageView!
 
-    func updateCell(with model: AnyObject) {
+    func updateCell(with model: Any) {
         selectionStyle = .none
         if let newModel = model as? WeatherViewModel {
-            lblCity.text = newModel.cityName
-            lblDescription.text = newModel.desc
-            lblTemp.text = newModel.temperatureString + Constants.degreeCelcius
+            cityLabel.text = newModel.cityName
+            descriptionLabel.text = newModel.desc
+            temperatureLabel.text = newModel.temperatureString + Constants.degreeCelcius
+            conditionImageView.image = UIImage(systemName: newModel.conditionName)
         }
     }
 }
