@@ -66,6 +66,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Wca-jd-z8l">
                                 <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="0jj-32-FKw" id="nFk-Av-vtj"/>
+                                    <outlet property="delegate" destination="0jj-32-FKw" id="r7n-Wx-SWu"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UJH-Hi-hUX"/>
@@ -84,6 +88,9 @@
                             <constraint firstItem="kW0-BO-M2s" firstAttribute="leading" secondItem="aTL-WT-qvH" secondAttribute="leading" id="tPb-3c-SnF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="weatherTableView" destination="Wca-jd-z8l" id="oa4-s4-I11"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iel-a3-ppf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
